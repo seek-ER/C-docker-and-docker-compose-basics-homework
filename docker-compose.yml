@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  bob:
+    build: bob
+    image: bob:1.0
+    container_name: bob
+    ports:
+      - '8081:8081'
+  alice:
+    build: alice
+    image: alice:1.0
+    container_name: alice
+    ports:
+      - '8080:8080'
+    depends_on:
+      - bob
